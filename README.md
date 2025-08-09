@@ -77,7 +77,7 @@ ORDER BY cnt DESC;
 Enable `.github/workflows/schedule_etl.yml` to run daily and upload the latest DB as a workflow artifact.  
 If you prefer committing the DB back to the repo, add a step with `git config` + `git commit` + `git push` using a PAT in `secrets`, but artifacts are simpler for demos.
 
-## Design choices (interview snippets)
+## Design choices
 
 - **SQLite:** zero-config local store ideal for demos and CI; good enough for small OHLC datasets.
 - **Idempotency:** `PRIMARY KEY(symbol, date)` with `INSERT OR REPLACE` allows safe re-runs; transforms drop/recreate the view.
